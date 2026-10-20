@@ -1,9 +1,15 @@
 # OmniInsight AI — Agentic Multimodal RAG Platform
 
-OmniInsight AI is an AI-powered document intelligence platform that enables users to upload PDF documents, search their content using semantic similarity, ask questions about the documents, and retrieve relevant images.
+OmniInsight AI is a Generative AI-powered document intelligence platform
+that combines Retrieval-Augmented Generation (RAG), semantic vector search,
+and agentic request routing to help users explore PDF documents.
 
-The platform combines Retrieval-Augmented Generation (RAG), vector search, citation validation, and evidence verification to help generate answers grounded in retrieved document content.
+The platform uses Sentence Transformers to generate local text embeddings,
+ChromaDB for semantic retrieval, and the OpenAI API for context-grounded
+question answering and vision-based image captioning.
 
+It also includes image extraction and search, source citation validation,
+and evidence verification to help reduce unsupported AI-generated answers.
 ## Features
 
 - **PDF ingestion:** Upload PDFs and extract text for processing.
@@ -21,7 +27,7 @@ The platform combines Retrieval-Augmented Generation (RAG), vector search, citat
 ## Technology Stack
 
 ### Frontend
-- React
+- React.js
 - Vite
 - JavaScript
 - CSS
@@ -30,16 +36,43 @@ The platform combines Retrieval-Augmented Generation (RAG), vector search, citat
 - Python
 - FastAPI
 - Uvicorn
+- Pydantic
 
-### Data and Retrieval
+### Generative AI and LLMs
+- OpenAI API for LLM-based question answering
+- OpenAI vision-capable model for image captioning
+- Prompt engineering for context-grounded answer generation
+- Evidence verification for checking answer support
+- Citation validation for checking source references
+
+### Retrieval-Augmented Generation (RAG)
+- Retrieval-Augmented Generation (RAG) pipeline
+- Document chunking and contextual retrieval
+- Sentence Transformers (`all-MiniLM-L6-v2`) for local text embeddings
+- Vector similarity search using ChromaDB
+- Source-aware answer generation
+
+### Multimodal AI
+- PyMuPDF for PDF text extraction and embedded image extraction
+- OpenAI vision capabilities for image caption generation
+- Image indexing and caption-based image retrieval
+
+### Agentic AI
+- Agentic request routing
+- Tool selection for document question answering and image search
+- Modular AI services for retrieval and response generation
+
+### Databases and Storage
 - PostgreSQL for document metadata
-- ChromaDB for vector storage and semantic retrieval
-- Sentence Transformers for local text embeddings
-- PyMuPDF for PDF processing
+- ChromaDB for vector storage and retrieval
+- Local persistent storage for uploaded PDFs and extracted images
 
-### AI
-- OpenAI API for answer generation and image captioning
-- Evidence verification and citation-validation services
+### Testing
+- pytest
+- Automated evidence-verification tests
+- Citation-validation tests
+- Answer-pipeline tests
+- FastAPI endpoint tests
 
 ## Architecture
 
